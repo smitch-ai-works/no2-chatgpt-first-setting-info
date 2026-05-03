@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Optimization Guide | Sumicchi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F9F6F2;
+            --surface: #FFFFFF;
+            --primary: #D2691E; /* テラコッタ */
+            --secondary: #4A4238; /* ブラウン */
+            --complement: #5F9EA0; /* カデットブルー */
+            --highlight: #EADBC8;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg);
+            color: var(--secondary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--surface);
+            box-shadow: 0 0 30px rgba(0,0,0,0.05);
+        }
+
+        /* タイトルエリア */
+        header {
+            background: linear-gradient(135deg, var(--secondary), #2D2A26);
+            padding: 60px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.8em;
+            font-weight: 900;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: 1.8em;
+            line-height: 1.4;
+            font-weight: 900;
+            margin: 0;
+        }
+
+        /* 導入・自己紹介 */
+        .intro-section {
+            padding: 40px 30px;
+            background: var(--highlight);
+        }
+
+        .intro-greet {
+            font-weight: 900;
+            font-size: 1.2em;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .overview-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 0.95em;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        /* メリット */
+        .benefit-wrap {
+            padding: 40px 30px;
+            background: var(--secondary);
+            color: white;
+        }
+
+        .benefit-item {
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        .benefit-item h3 {
+            color: var(--highlight);
+            font-size: 1.1em;
+            margin: 0 0 5px 0;
+        }
+
+        .benefit-item p {
+            font-size: 0.85em;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* 動画フレーム（リール風） */
+        .video-container {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #000;
+            border-radius: 20px;
+            margin: 25px 0;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: bold;
+            backdrop-filter: blur(4px);
+        }
+
+        /* 本文セクション */
+        .step-section {
+            padding: 50px 30px;
+            border-bottom: 1px solid #EEE;
+        }
+
+        .step-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8em;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .setting-path {
+            background: var(--bg);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 900;
+            margin-top: 15px;
+            border: 1px solid var(--highlight);
+        }
+
+        /* プロンプト・コードブロック */
+        .code-title {
+            font-size: 0.75em;
+            font-weight: 900;
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        pre {
+            background: #2D2A26;
+            color: #F9F6F2;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap;
+            margin: 0;
+            border-left: 6px solid var(--complement);
+        }
+
+        .closing {
+            padding: 60px 30px;
+            text-align: center;
+            background: var(--highlight);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- タイトル -->
+    <header>
+        <span class="hero-badge">9割が知らない「損」の回避法</span>
+        <h1 class="hero-title">ChatGPTを最強の相棒に<br>3分で完了する究極の最適化</h1>
+    </header>
+
+    <!-- 挨拶・自己紹介 -->
+    <section class="intro-section">
+        <span class="intro-greet">こんにちは、すみっちです！</span>
+        <p style="margin: 0; font-weight: bold;">特典を受け取っていただき、本当にありがとうございます！</p>
+        
+        <div class="overview-box">
+            ChatGPTを「初期設定」まま使う＝能力が半減以下の状態、と言ってもおかしくないです！<br>
+            この資料では、ChatGPTを<strong>「最高のAIツール」</strong>へ進化させる手順を解説します！<br><br>
+            効率化した時間は、副業やスキルアップ、大切な休息に...まずはこの3つの設定を動画と一緒に進めてみてください！
+        </div>
+    </section>
+
+    <!-- メリット -->
+    <section class="benefit-wrap">
+        <div class="benefit-item">
+            <h3>🚀 意思疎通のロスがゼロに</h3>
+            <p>何度も同じ説明をする手間が消え、AIがあなたの意図を最短距離で汲み取ります。</p>
+        </div>
+        <div class="benefit-item">
+            <h3>💎 回答精度が劇的に向上</h3>
+            <p>嘘や曖昧さを排除。そのまま仕事に使える「根拠のある答え」が手に入ります。</p>
+        </div>
+        <div class="benefit-item">
+            <h3>⏳ 生まれた時間で次のステージへ</h3>
+            <p>設定ひとつで作業が爆速化。浮いた時間を副業のアイデア出しなど、攻めの時間に充てられます。</p>
+        </div>
+    </section>
+
+    <!-- STEP 1 -->
+    <section class="step-section">
+        <span class="step-num">STEP 01</span>
+        <h2>あなたの情報を守り抜く</h2>
+        <p style="font-size: 0.9em;">入力内容が勝手に学習に使われるのを防ぎます。セキュリティを固めて、安心して相談できる環境を作りましょう。</p>
+        
+        <div class="video-container">
+            <video src="Video1.mp4" autoplay loop muted playsinline></video>
+        </div>
+
+        <div class="setting-path">▶ 設定 ＞ データコントロール ＞ モデル改善をOFF</div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step-section">
+        <span class="step-num">STEP 02</span>
+        <h2>あなたの「癖」を覚えさせる</h2>
+        <p style="font-size: 0.9em;">メモリ機能をONに。あなたの背景や好みをAIが学習し、使えば使うほど「阿吽の呼吸」で動くようになります。</p>
+
+        <div class="video-container">
+            <video src="Video2.mp4" autoplay loop muted playsinline></video>
+        </div>
+
+        <div class="setting-path">▶ 設定 ＞ パーソナライズ ＞ メモリをON</div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step-section">
+        <span class="step-num">STEP 03</span>
+        <h2>カスタム指示で「質」を固定する</h2>
+        <p style="font-size: 0.9em;">回答の「型」をあらかじめ指定します。これで、適当な回答に振り回される時間はもう終わりです。</p>
+
+        <div class="video-container">
+            <video src="Video3.mp4" autoplay loop muted playsinline></video>
+        </div>
+
+        <div class="code-wrap">
+            <span class="code-title">▼ カスタム指示にそのままコピー＆ペースト</span>
+<pre><code>推測で答えない。出典と日付を示す。
+結論→理由→具体的な数字の順で回答。
+不明な場合は「わかりません」と答える。</code></pre>
+        </div>
+    </section>
+
+    <!-- 挨拶 -->
+    <section class="closing">
+        <h2 style="font-size: 1.6em; margin-bottom: 20px;">設定お疲れ様でした！</h2>
+        <p style="font-size: 0.95em; font-weight: bold; line-height: 1.8;">
+            これだけで、ChatGPTの使い心地は劇的に変わります！<br><br>
+            AIで効率化した時間を最大限に活用して、<br>
+            あなたが望む「最高の成果」を掴み取りましょう！
+        </p>
+    </section>
+</div>
+
+</body>
+</html>
